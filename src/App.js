@@ -10,6 +10,7 @@ import About from './components/pages/About';
 import FAQ from './components/pages/FAQ';
 import NotFound from './components/pages/NotFound';
 import MarketPlace from './components/pages/MarketPlace';
+import Notes from './components/pages/Notes';
 
 import './App.css';
 import SingleProperty from './components/pages/SingleProperty';
@@ -24,6 +25,7 @@ function App() {
             <Route path='/FAQ' element={<FAQ/>}></Route>
             <Route path='/MarketPlace' element={<MarketPlace/>}></Route>
             <Route path='/property/:id' element={<SingleProperty/>}></Route>
+            <Route path='/notes' element={<Notes/>}></Route>
             <Route path='/' element={<Home/>}></Route>
 	    <Route path = '*' element={<NotFound/>} />
           </Routes>

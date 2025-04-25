@@ -20,11 +20,21 @@ const user = require('./routes/userRoute');
 const product = require('./routes/productRoute');
 const order = require('./routes/orderRoute');
 const payment = require('./routes/paymentRoute');
+const note = require('./routes/noteRoute');
 
 app.use('/api/v1', user);
 app.use('/api/v1', product);
 app.use('/api/v1', order);
 app.use('/api/v1', payment);
+app.use('/api/v1', note);
+
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, '..', 'public')));
+
+// Route for notes app
+app.get('/notes', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '..', 'public', 'notes.html'));
+});
 
 __dirname = path.resolve();
 if (process.env.NODE_ENV === 'production') {
